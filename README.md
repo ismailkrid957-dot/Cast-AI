@@ -1,8 +1,7 @@
-<div align="center">
+ <div align="center">
 
 <!-- ANIMATED HERO BANNER -->
-<img src="https://raw.githubusercontent.com/aloui-adem/assets/main/docs/assets/banner.svg"
-     width="100%" />
+<img src="https://raw.githubusercontent.com/aloui-adem/assets/main/docs/assets/banner.svg" alt="Cast AI — Plateforme de présélection artistique" width="100%" />
 
 <br/>
 
@@ -42,8 +41,7 @@ Dans les industries culturelle et cinématographique, la présélection des cand
 **Cast AI** est une plateforme d'aide à la décision conçue pour les producteurs, directeurs de casting et jurys artistiques. Plutôt que de reposer sur un score global opaque, le moteur combine des indicateurs multimodaux objectifs (expressivité faciale, posture scénique, prosodie vocale, diction et cohérence avec le rôle) afin de générer un **profil d'évaluation radar explicable**, systématiquement soumis à la validation finale d'un jury humain.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/aloui-adem/assets/main/docs/assets/cast-ai-radar.svg"
-     width="95%" />
+  <img src="https://raw.githubusercontent.com/aloui-adem/assets/main/docs/assets/cast-ai-radar.svg" alt="Cast AI Engine — Radar Éthique 360" width="92%" />
 </div>
 
 ---
@@ -53,8 +51,7 @@ Dans les industries culturelle et cinématographique, la présélection des cand
 > **Parcours complet :** dépôt d'une audition vidéo, traitement asynchrone via Celery/Redis, extraction des métriques multimodales et restitution du profil radar explicable.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/aloui-adem/assets/main/docs/assets/pipeline-flow.svg"
-     width="95%" />
+  <img src="https://raw.githubusercontent.com/aloui-adem/assets/main/docs/assets/pipeline-flow.svg" alt="Pipeline Asynchrone Cast AI" width="95%" />
 </div>
 
 | Espace Candidat — Dépôt d'audition | Espace Jury — Profil Radar & Top 15 |
@@ -62,7 +59,7 @@ Dans les industries culturelle et cinématographique, la présélection des cand
 | ![Démo Candidat](docs/assets/demo-candidat.gif) | ![Démo Jury](docs/assets/demo-jury.gif) |
 | *Soumission vidéo et suivi du traitement en temps réel.* | *Exploration des scores explicables et validation humaine.* |
 
-> *Astuce GitHub : pour remplacer les emplacements `.gif` ci-dessus par vos captures d'écran animées, ouvrez `README.md` en mode édition sur GitHub.com et glissez-déposez vos fichiers `.gif` ou `.mp4` directement dans l'éditeur.*
+> **Astuce GitHub :** pour ajouter ou remplacer les GIFs, ouvrez `README.md` en mode édition sur GitHub.com et glissez-déposez vos fichiers directement dans l'éditeur.
 
 ---
 
@@ -74,7 +71,7 @@ Conçu dans le cadre du **Hackathon IA Éthique 360** co-organisé par la **Juni
 | :--- | :--- |
 | **Explicabilité (XAI)** | Aucun score global opaque : chaque évaluation est décomposée par critère artistique (prosodie, expressivité, posture, diction, cohérence) dans `evaluations`. |
 | **Neutralisation des biais** | Analyse centrée exclusivement sur la performance artistique (repères géométriques et acoustiques) sans profilage morphologique ou identitaire. |
-| **Supervision humaine (*Human-in-the-Loop*)** | L'IA assiste le tri initial et met en lumière des profils atypiques ; **la décision finale de casting reste 100 % humaine**. |
+| **Supervision humaine (Human-in-the-Loop)** | L'IA assiste le tri initial et met en lumière des profils atypiques ; **la décision finale de casting reste 100 % humaine**. |
 | **Inclusivité francophone** | Calibration acoustique ouverte à la diversité des accents et expressions culturelles de l'espace francophone (OIF). |
 
 ---
@@ -135,7 +132,7 @@ spider-el-3ankabout/
 │   ├── src/                # Composants React, visualisation Radar et client Axios
 │   └── package.json
 ├── docs/
-│   └── assets/             # Bannière SVG, radar animé, pipeline et GIFs de démo
+│   └── assets/             # GIFs de démonstration
 ├── .gitignore
 └── README.md
 ```
@@ -146,14 +143,14 @@ spider-el-3ankabout/
 
 ### Prérequis
 
-* **Python** 3.11+
-* **Node.js** 18+ et **npm**
-* **Docker** *(pour l'exécution de Redis)*
+- **Python** 3.11+
+- **Node.js** 18+ et **npm**
+- **Docker** (*pour l'exécution de Redis*)
 
 ### 1. Cloner le dépôt
 
 ```bash
-git clone [https://github.com/ismailkrid957-dot/spider-el-3ankabout.git](https://github.com/ismailkrid957-dot/spider-el-3ankabout.git)
+git clone https://github.com/ismailkrid957-dot/spider-el-3ankabout.git
 cd spider-el-3ankabout
 ```
 
@@ -165,16 +162,19 @@ cd backend
 
 **Créer et activer l'environnement virtuel :**
 
-* **Windows (PowerShell) :**
-  ```powershell
-  python -m venv .venv
-  .\.venv\Scripts\Activate.ps1
-  ```
-* **Linux / macOS :**
-  ```bash
-  python3 -m venv .venv
-  source .venv/bin/activate
-  ```
+- **Windows (PowerShell) :**
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+- **Linux / macOS :**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
 **Installer les dépendances et configurer les variables d'environnement :**
 
@@ -182,6 +182,7 @@ cd backend
 pip install -r requirements.txt
 cp .env.example .env
 ```
+
 *(Sous Windows PowerShell, utilisez `Copy-Item .env.example .env`.)*
 
 **Générer une clé secrète Django et l'ajouter dans `.env` :**
@@ -198,7 +199,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-*(Optionnel — dans un second terminal depuis `backend/` avec `.venv` activé, démarrez le worker Celery : `celery -A config worker -l info`)*
+*(Optionnel — dans un second terminal depuis `backend/` avec `.venv` activé, démarrez le worker Celery : `celery -A config worker -l info`.)*
 
 API Backend accessible sur **http://127.0.0.1:8000/**.
 
