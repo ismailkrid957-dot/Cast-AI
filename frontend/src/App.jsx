@@ -161,7 +161,7 @@ function App() {
 
         <section className="prototype-banner">
           <div><span className="eyebrow">ÉTAT DU PROJET</span><h2>Cast IA est en cours de développement.</h2><p>Cette page présente le fonctionnement visé. L’analyse automatique des auditions, la notation IA et le classement réel des quinze meilleurs candidats restent à implémenter et à valider.</p></div>
-          <span className="prototype-pill">Prototype</span>
+          <a className="prototype-pill" href="https://github.com/ismailkrid957-dot/spider-el-3ankabout" target="_blank" rel="noopener noreferrer" aria-label="Voir le dépôt GitHub de Cast IA">Prototype ↗</a>
         </section>
       </main>
 
