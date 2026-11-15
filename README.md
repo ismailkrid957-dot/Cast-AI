@@ -1,13 +1,12 @@
-
-# Spider Casting
+# Cast IA
 
 **Plateforme intelligente de gestion et d'évaluation des auditions.**
 
 ## Présentation
 
-Spider Casting est un projet visant à simplifier le processus de casting grâce à une plateforme web permettant aux directeurs de casting de publier des scénarios et aux candidats de participer aux auditions.
+Cast IA est une plateforme web destinée à faciliter l'organisation des castings. Elle permet aux directeurs de casting de publier des scénarios et aux candidats de participer aux auditions.
 
-Le projet prévoit également l'intégration de méthodes d'intelligence artificielle pour assister l'analyse des performances des candidats.
+Le projet prévoit également l'intégration de méthodes d'intelligence artificielle afin d'assister l'analyse des performances des candidats.
 
 ## Technologies
 
@@ -16,7 +15,7 @@ Le projet prévoit également l'intégration de méthodes d'intelligence artific
 - Django 5.2
 - Django REST Framework
 - SQLite
-- Redis (configuration pour les traitements asynchrones)
+- Redis (configuration prévue pour les traitements asynchrones)
 
 ### Frontend
 - React 19
@@ -28,7 +27,7 @@ Le projet prévoit également l'intégration de méthodes d'intelligence artific
 ## Architecture
 
 ```text
-spider-casting/
+cast-ia/
 ├── backend/
 │   ├── ai/
 │   ├── applicants/
@@ -60,14 +59,13 @@ spider-casting/
 
 ## Fonctionnalités en cours de développement
 
-- Interface utilisateur React.
+- Interface utilisateur React dédiée à Cast IA.
 - Soumission et gestion des vidéos d'audition via une API.
 - Traitement automatique des auditions.
 - Intégration des fonctionnalités d'intelligence artificielle.
 - Analyse et génération de retours sur les performances.
 
 ## Installation et lancement
-
 
 ### 1. Backend
 
@@ -98,56 +96,46 @@ Générer une clé secrète Django :
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
-Copier la clé générée dans `backend/.env`, à la place de la valeur d'exemple :
+Copier la clé générée dans le fichier `.env`, à la place de la valeur d'exemple :
 
 ```env
 DJANGO_SECRET_KEY=ta_cle_secrete_generee
 ```
 
-Appliquer les migrations :
+Appliquer les migrations et lancer le serveur :
 
 ```powershell
 python manage.py migrate
-```
-
-Lancer le serveur :
-
-```powershell
 python manage.py runserver
 ```
 
-Le backend sera disponible sur :
-
-http://127.0.0.1:8000/
-
+Le backend sera disponible à l'adresse : http://127.0.0.1:8000/
 
 ### 2. Frontend
 
 Depuis le dossier `frontend` :
 
-```bash
+```powershell
 npm install
 npm run dev
 ```
 
-Le frontend sera disponible sur :
+Le frontend sera disponible à l'adresse : http://localhost:5173/
 
-http://localhost:5173/
+### 3. Redis (facultatif pour le démarrage de base)
 
-### 3. Redis
+Si tu souhaites lancer Redis avec Docker, exécute la commande depuis le dossier `backend`, où se trouve le fichier `docker-compose.yml` :
 
-Pour lancer Redis avec Docker :
-
-```bash
+```powershell
 docker compose up -d
 ```
 
 ## État du projet
 
-Spider Casting est actuellement au stade de prototype en développement.
+Cast IA est actuellement au stade de prototype en développement.
 
-Les fonctionnalités backend de gestion des profils et des scénarios constituent la première base fonctionnelle. L'interface React et les fonctionnalités avancées d'analyse des auditions restent à développer.
+Le backend dispose d'une première base fonctionnelle pour la gestion des profils et des scénarios. L'interface React et les fonctionnalités avancées de gestion et d'analyse des auditions restent à développer.
 
 ## Auteur
 
-Projet académique et technique — Spider Casting.
+Projet académique et technique — Cast IA.
