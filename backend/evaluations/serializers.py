@@ -15,6 +15,9 @@ class AuditionSerializer(serializers.ModelSerializer):
         read_only_fields = [
             "id", "candidat", "candidat_username", "statut", "date_soumission"
         ]
+        extra_kwargs = {
+            "role": {"required": True, "allow_null": False},
+        }
 
     def validate(self, attrs):
         role = attrs.get("role")
@@ -43,6 +46,9 @@ class EvaluationSerializer(serializers.ModelSerializer):
             "date_evaluation"
         ]
         read_only_fields = ["id", "audition", "date_evaluation"]
+        extra_kwargs = {
+            "score_global": {"required": True, "allow_null": False},
+        }
 
     def validate_score_global(self, score):
         if score is None or not 0 <= score <= 100:
