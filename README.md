@@ -1,7 +1,136 @@
-# spider-el-3ankabout
-Notre projet consiste à développer une solution intelligente basée sur l'intelligence artificielle afin d'optimiser le processus de casting.
-Face à un nombre important de candidatures pour un même rôle, les producteurs et les équipes de casting sont confrontés à une surcharge de travail
-et à une fatigue décisionnelle qui peuvent nuire à la qualité de leurs choix.
-Notre solution vise à analyser les vidéos des candidats à l'aide de techniques de vision par ordinateur, notamment pour identifier et décrire certains 
-éléments observables du langage corporel. Elle permettra d'organiser les candidatures et d'aider l'équipe de casting à présélectionner un nombre réduit de profils parmi plusieurs centaines de candidats.
-L'objectif est de réduire le temps consacré à l'évaluation initiale tout en laissant la décision finale aux producteurs et aux professionnels du casting.
+
+# Spider Casting
+
+**Plateforme intelligente de gestion et d'évaluation des auditions.**
+
+## Présentation
+
+Spider Casting est un projet visant à simplifier le processus de casting grâce à une plateforme web permettant aux directeurs de casting de publier des scénarios et aux candidats de participer aux auditions.
+
+Le projet prévoit également l'intégration de méthodes d'intelligence artificielle pour assister l'analyse des performances des candidats.
+
+## Technologies
+
+### Backend
+- Python
+- Django 5.2
+- Django REST Framework
+- SQLite
+- Redis (configuration pour les traitements asynchrones)
+
+### Frontend
+- React 19
+- Vite
+- JavaScript
+- Axios
+- React Router
+
+## Architecture
+
+```text
+spider-casting/
+├── backend/
+│   ├── ai/
+│   ├── applicants/
+│   ├── casting/
+│   ├── evaluations/
+│   ├── config/
+│   ├── manage.py
+│   └── docker-compose.yml
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   └── package.json
+│
+├── .gitignore
+└── README.md
+```
+
+## Fonctionnalités implémentées
+
+- Gestion des utilisateurs avec l'authentification Django.
+- Gestion des profils avec deux rôles : directeur de casting et candidat.
+- Création automatique d'un profil lors de la création d'un utilisateur.
+- Modèle de données pour les scénarios de casting.
+- Consultation des scénarios par les utilisateurs authentifiés.
+- Création de scénarios réservée aux directeurs de casting.
+- Modèles de données pour les auditions et les évaluations.
+- API REST pour la consultation et la création des scénarios.
+
+## Fonctionnalités en cours de développement
+
+- Interface utilisateur React.
+- Soumission et gestion des vidéos d'audition via une API.
+- Traitement automatique des auditions.
+- Intégration des fonctionnalités d'intelligence artificielle.
+- Analyse et génération de retours sur les performances.
+
+## Installation et lancement
+
+### 1. Backend
+
+Depuis le dossier `backend` :
+
+```bash
+python -m venv .venv
+```
+
+Activation sous Windows PowerShell :
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Installation des dépendances :
+
+```bash
+pip install -r requirements.txt
+```
+
+Application des migrations :
+
+```bash
+python manage.py migrate
+```
+
+Lancement du serveur :
+
+```bash
+python manage.py runserver
+```
+
+Le backend sera disponible sur :
+
+http://127.0.0.1:8000/
+
+### 2. Frontend
+
+Depuis le dossier `frontend` :
+
+```bash
+npm install
+npm run dev
+```
+
+Le frontend sera disponible sur :
+
+http://localhost:5173/
+
+### 3. Redis
+
+Pour lancer Redis avec Docker :
+
+```bash
+docker compose up -d
+```
+
+## État du projet
+
+Spider Casting est actuellement au stade de prototype en développement.
+
+Les fonctionnalités backend de gestion des profils et des scénarios constituent la première base fonctionnelle. L'interface React et les fonctionnalités avancées d'analyse des auditions restent à développer.
+
+## Auteur
+
+Projet académique et technique — Spider Casting.

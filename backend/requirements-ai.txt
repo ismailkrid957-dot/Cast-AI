@@ -1,0 +1,17 @@
+
+# ==================================================
+# DEPENDANCES POUR L'INTELLIGENCE ARTIFICIELLE
+# ==================================================
+
+# Analyse et reconnaissance faciale
+deepface==0.0.105
+
+# Extraction des caractéristiques audio
+librosa==0.11.0
+
+# Détection des points caractéristiques du visage
+mediapipe==1.2.3
+
+# Calcul scientifique et manipulation des tableaux
+numpy==2.4.6
+scipy==1.17.1

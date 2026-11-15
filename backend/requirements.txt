@@ -1,0 +1,22 @@
+
+# ==================================================
+# DEPENDANCES PRINCIPALES DU PROJET SPIDER CASTING
+# ==================================================
+
+# Framework backend
+Django==5.2.19
+
+# Création de l'API REST
+djangorestframework==3.18.3
+
+# Autorisation des requêtes entre le frontend et le backend
+django-cors-headers==4.9.0
+
+# Gestion des traitements asynchrones
+celery==5.7.0
+
+# Communication avec Redis
+redis==8.1.0
+
+# Chargement des variables d'environnement
+python-dotenv==1.2.4
