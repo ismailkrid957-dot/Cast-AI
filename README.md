@@ -1,9 +1,10 @@
  <div align="center">
 
 <!-- ANIMATED HERO BANNER -->
+
 <div align="center">
   <img
-    src="https://raw.githubusercontent.com/aloui-adem/assets/main/docs/assets/banner.svg"
+    src="https://aloui-adem.github.io/assets/docs/assets/banner.svg"
     alt="Cast AI — Plateforme de présélection artistique"
     width="100%"
   />
