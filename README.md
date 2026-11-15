@@ -6,8 +6,7 @@
 <br/>
 
 <!-- ANIMATED TYPING HEADER -->
-<a href="https://github.com/ismailkrid957-dot/spider-el-3ankabout">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=38BDF8&center=true&vCenter=true&multiline=true&repeat=true&width=820&height=80&lines=CAST+AI+%E2%80%94+Pr%C3%A9s%C3%A9lection+Artistique+Assist%C3%A9e+par+IA;IA+%C3%89thique+360+%E2%80%A2+JEI+INSAT+%C3%97+OIF+(Mandat+2026%2F2027)" alt="Cast AI Typing Animation" />
+<img src="docs/assets/banner.svg" alt="Cast AI Banner" width="100%" />
 </a>
 
 <p align="center">
