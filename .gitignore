@@ -1,8 +1,8 @@
-.venv/
+venv/
 __pycache__/
-.pytest_cache/
-*.py[cod]
+*.pyc
 .env
-.DS_Store
-uploads/
-data/
+media/
+models_weights/*.task
+frontend/node_modules/
+frontend/static/frontend/main.js
