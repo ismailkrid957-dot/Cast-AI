@@ -68,41 +68,58 @@ spider-casting/
 
 ## Installation et lancement
 
+
 ### 1. Backend
 
 Depuis le dossier `backend` :
 
-```bash
-python -m venv .venv
-```
-
-Activation sous Windows PowerShell :
+Créer et activer un environnement virtuel :
 
 ```powershell
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-Installation des dépendances :
+Installer les dépendances :
 
-```bash
+```powershell
 pip install -r requirements.txt
 ```
 
-Application des migrations :
+Configurer les variables d'environnement :
 
-```bash
+```powershell
+Copy-Item .env.example .env
+```
+
+Générer une clé secrète Django :
+
+```powershell
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+
+Copier la clé générée dans `backend/.env`, à la place de la valeur d'exemple :
+
+```env
+DJANGO_SECRET_KEY=ta_cle_secrete_generee
+```
+
+Appliquer les migrations :
+
+```powershell
 python manage.py migrate
 ```
 
-Lancement du serveur :
+Lancer le serveur :
 
-```bash
+```powershell
 python manage.py runserver
 ```
 
 Le backend sera disponible sur :
 
 http://127.0.0.1:8000/
+
 
 ### 2. Frontend
 
