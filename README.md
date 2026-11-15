@@ -45,7 +45,11 @@ Dans les industries culturelle et cinématographique, la présélection des cand
 **Cast AI** est une plateforme d'aide à la décision conçue pour les producteurs, directeurs de casting et jurys artistiques. Plutôt que de reposer sur un score global opaque, le moteur combine des indicateurs multimodaux objectifs (expressivité faciale, posture scénique, prosodie vocale, diction et cohérence avec le rôle) afin de générer un **profil d'évaluation radar explicable**, systématiquement soumis à la validation finale d'un jury humain.
 
 <div align="center">
-  <img src="docs/assets/cast-ai-radar.svg" alt="Cast AI Engine — Radar Éthique 360" width="92%" />
+  <img
+    src="https://aloui-adem.github.io/assets/docs/assets/cast-ai-radar.svg"
+    alt="Cast AI — Plateforme de présélection artistique"
+    width="92%"
+  />
 </div>
 
 ---
@@ -55,7 +59,11 @@ Dans les industries culturelle et cinématographique, la présélection des cand
 > **Parcours complet :** dépôt d'une audition vidéo, traitement asynchrone via Celery/Redis, extraction des métriques multimodales et restitution du profil radar explicable.
 
 <div align="center">
-  <img src="docs/assets/pipeline-flow.svg" alt="Pipeline Asynchrone Cast AI" width="95%" />
+  <img
+    src="https://aloui-adem.github.io/assets/docs/assets/pipeline-flow.svg"
+    alt="Cast AI — Plateforme de présélection artistique"
+    width="95%"
+  />
 </div>
 
 | Espace Candidat — Dépôt d'audition | Espace Jury — Profil Radar & Top 15 |
