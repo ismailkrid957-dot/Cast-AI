@@ -1,12 +1,21 @@
 # Cast IA
 
-**Plateforme intelligente de gestion et d'évaluation des auditions.**
+**Plateforme d'aide à la présélection des candidats pour les castings.**
 
 ## Présentation
 
-Cast IA est une plateforme web destinée à faciliter l'organisation des castings. Elle permet aux directeurs de casting de publier des scénarios et aux candidats de participer aux auditions.
+Cast IA est une plateforme destinée aux producteurs et aux directeurs de casting. Son objectif est de faciliter le tri d'un grand nombre de candidatures et l'identification des profils les plus adaptés à chaque rôle.
 
-Le projet prévoit également l'intégration de méthodes d'intelligence artificielle afin d'assister l'analyse des performances des candidats.
+Le fonctionnement cible est le suivant :
+
+1. Le producteur ou le directeur de casting définit un projet et ses rôles.
+2. Les candidats déposent leur profil et leur audition pour un rôle.
+3. Les auditions sont analysées selon des critères définis pour ce rôle.
+4. Chaque candidature reçoit une note accompagnée, à terme, d'éléments explicatifs.
+5. Pour chaque rôle, Cast IA met en avant les **15 candidats les mieux notés**.
+6. Le producteur consulte les auditions et conserve la décision finale.
+
+L'intelligence artificielle est un outil d'aide à la présélection : elle ne remplace pas le jugement du producteur et ses évaluations doivent pouvoir être contrôlées.
 
 ## Technologies
 
@@ -16,6 +25,7 @@ Le projet prévoit également l'intégration de méthodes d'intelligence artific
 - Django REST Framework
 - SQLite
 - Redis (configuration prévue pour les traitements asynchrones)
+- librosa (choix retenu pour l'extraction des caractéristiques audio)
 
 ### Frontend
 - React 19
@@ -46,24 +56,32 @@ cast-ia/
 └── README.md
 ```
 
-## Fonctionnalités implémentées
+## Fonctionnalités actuellement présentes dans le backend
 
-- Gestion des utilisateurs avec l'authentification Django.
-- Gestion des profils avec deux rôles : directeur de casting et candidat.
+- Authentification Django.
+- Profils avec deux types de comptes : directeur de casting et candidat.
 - Création automatique d'un profil lors de la création d'un utilisateur.
 - Modèle de données pour les scénarios de casting.
 - Consultation des scénarios par les utilisateurs authentifiés.
 - Création de scénarios réservée aux directeurs de casting.
-- Modèles de données pour les auditions et les évaluations.
-- API REST pour la consultation et la création des scénarios.
+- Modèles de données pour les auditions vidéo et les évaluations.
+- Champ de note globale associé à une évaluation.
 
-## Fonctionnalités en cours de développement
+## Interface actuelle et fonctionnalités à développer
 
-- Interface utilisateur React dédiée à Cast IA.
-- Soumission et gestion des vidéos d'audition via une API.
-- Traitement automatique des auditions.
-- Intégration des fonctionnalités d'intelligence artificielle.
-- Analyse et génération de retours sur les performances.
+L'interface React présente le concept Cast IA et un aperçu interactif de classements par rôle. Les noms et les notes affichés dans cet aperçu sont **des données fictives de démonstration** : ils ne proviennent pas encore du backend.
+
+Les éléments suivants restent à implémenter pour obtenir le fonctionnement réel :
+
+- Modèle de données des rôles, rattachés aux projets/castings.
+- Association de chaque audition au rôle concerné.
+- Dépôt et consultation des vidéos d'audition via l'API.
+- Définition des critères de notation par rôle.
+- Analyse automatique des auditions et génération de notes justifiables.
+- API de classement qui retourne les 15 meilleures candidatures pour chaque rôle.
+- Interface producteur connectée aux données réelles, avec consultation des auditions et validation humaine.
+
+**Important :** le classement automatique et le Top 15 réel ne sont pas encore opérationnels. L'aperçu de la page d'accueil sert uniquement à illustrer le résultat attendu.
 
 ## Installation et lancement
 
@@ -96,20 +114,14 @@ Générer une clé secrète Django :
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
-Copier la clé générée dans le fichier `.env`, à la place de la valeur d'exemple :
-
-```env
-DJANGO_SECRET_KEY=ta_cle_secrete_generee
-```
-
-Appliquer les migrations et lancer le serveur :
+Copier la clé générée dans le fichier `.env`, puis appliquer les migrations et lancer le serveur :
 
 ```powershell
 python manage.py migrate
 python manage.py runserver
 ```
 
-Le backend sera disponible à l'adresse : http://127.0.0.1:8000/
+Backend : http://127.0.0.1:8000/
 
 ### 2. Frontend
 
@@ -120,11 +132,11 @@ npm install
 npm run dev
 ```
 
-Le frontend sera disponible à l'adresse : http://localhost:5173/
+Frontend : http://localhost:5173/
 
 ### 3. Redis (facultatif pour le démarrage de base)
 
-Si tu souhaites lancer Redis avec Docker, exécute la commande depuis le dossier `backend`, où se trouve le fichier `docker-compose.yml` :
+Pour lancer Redis avec Docker, depuis le dossier `backend` :
 
 ```powershell
 docker compose up -d
@@ -132,9 +144,7 @@ docker compose up -d
 
 ## État du projet
 
-Cast IA est actuellement au stade de prototype en développement.
-
-Le backend dispose d'une première base fonctionnelle pour la gestion des profils et des scénarios. L'interface React et les fonctionnalités avancées de gestion et d'analyse des auditions restent à développer.
+Cast IA est un prototype en développement. La base Django contient les premiers modèles de profils, scénarios, auditions et évaluations. L'interface présente désormais la vision produit centrée sur la présélection et le Top 15 par rôle. Le modèle métier complet des rôles, l'analyse IA et le classement réel restent à construire.
 
 ## Auteur
 
