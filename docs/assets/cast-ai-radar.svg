@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="100%" height="360">
+  <rect width="880" height="360" rx="16" fill="#0B111E" stroke="#1E293B" stroke-width="2" />
+
+  <!-- Left: Hexagon Radar Grid centered at (230, 185) -->
+  <g stroke="#263244" stroke-width="1.2" fill="none">
+    <!-- Outer Ring R=105 -->
+    <polygon points="230,80 321,132.5 321,237.5 230,290 139,237.5 139,132.5" />
+    <!-- Middle Ring R=70 -->
+    <polygon points="230,115 290.6,150 290.6,220 230,255 169.4,220 169.4,150" />
+    <!-- Inner Ring R=35 -->
+    <polygon points="230,150 260.3,167.5 260.3,202.5 230,220 199.7,202.5 199.7,167.5" />
+    <!-- Axes -->
+    <line x1="230" y1="80" x2="230" y2="290" />
+    <line x1="321" y1="132.5" x2="139" y2="237.5" />
+    <line x1="321" y1="237.5" x2="139" y2="132.5" />
+  </g>
+
+  <!-- Animated Candidate Evaluation Polygon -->
+  <polygon points="230,96 306,141 296,223 230,272 155,228 162,146" fill="#10B981" fill-opacity="0.18" stroke="#4ADE80" stroke-width="3">
+    <animate attributeName="fill-opacity" values="0.14;0.28;0.14" dur="3s" repeatCount="indefinite" />
+  </polygon>
+
+  <!-- Radar Vertices -->
+  <circle cx="230" cy="96" r="6" fill="#60A5FA" />
+  <circle cx="306" cy="141" r="6" fill="#4ADE80" />
+  <circle cx="296" cy="223" r="6" fill="#60A5FA" />
+  <circle cx="230" cy="272" r="6" fill="#4ADE80" />
+  <circle cx="155" cy="228" r="6" fill="#60A5FA" />
+  <circle cx="162" cy="146" r="6" fill="#4ADE80" />
+
+  <!-- Radar Axis Labels -->
+  <g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">
+    <text x="230" y="62" text-anchor="middle">Expressivité (DeepFace)</text>
+    <text x="334" y="136" text-anchor="start">Posture (MediaPipe)</text>
+    <text x="334" y="242" text-anchor="start">Prosodie (Librosa)</text>
+    <text x="230" y="314" text-anchor="middle" fill="#4ADE80">Équité & Auditabilité</text>
+    <text x="126" y="242" text-anchor="end">Diction</text>
+    <text x="126" y="136" text-anchor="end">Cohérence Rôle</text>
+  </g>
+
+  <!-- Right Panel: Governance & XAI Status -->
+  <g transform="translate(495, 76)">
+    <text x="0" y="0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#38BDF8" letter-spacing="1">CAST AI ENGINE — IA ÉTHIQUE 360</text>
+    <text x="0" y="26" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#94A3B8">JEI INSAT × OIF • Mandat 2026/2027</text>
+
+    <!-- Card 1 -->
+    <rect x="0" y="50" width="340" height="44" rx="8" fill="#111A2B" stroke="#263244" stroke-width="1.2" />
+    <circle cx="22" cy="72" r="6" fill="#4ADE80" />
+    <text x="42" y="77" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0">Biais démographiques : <tspan font-weight="700" fill="#4ADE80">NEUTRALISÉS</tspan></text>
+
+    <!-- Card 2 -->
+    <rect x="0" y="108" width="340" height="44" rx="8" fill="#111A2B" stroke="#263244" stroke-width="1.2" />
+    <circle cx="22" cy="130" r="6" fill="#60A5FA" />
+    <text x="42" y="135" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0">Explicabilité Radar  : <tspan font-weight="700" fill="#60A5FA">ACTIVE</tspan></text>
+
+    <!-- Card 3 -->
+    <rect x="0" y="166" width="340" height="44" rx="8" fill="#111A2B" stroke="#263244" stroke-width="1.2" />
+    <circle cx="22" cy="188" r="6" fill="#F59E0B">
+      <animate attributeName="opacity" values="1;0.35;1" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+    <text x="42" y="193" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0">Décision finale : <tspan font-weight="700" fill="#FBBF24">HUMAN-IN-THE-LOOP</tspan></text>
+  </g>
+</svg>
