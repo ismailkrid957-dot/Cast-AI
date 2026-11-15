@@ -1,6 +1,5 @@
-
 # ==================================================
-# DEPENDANCES PRINCIPALES DU PROJET SPIDER CASTING
+# DEPENDANCES PRINCIPALES DU PROJET CAST IA
 # ==================================================
 
 # Framework backend
