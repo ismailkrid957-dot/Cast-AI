@@ -1,215 +1,151 @@
-<div align="center">
+# Cast IA
 
-<img src="docs/assets/cast-ia-banner.svg" alt="Bannière Cast IA — Hackathon IA Éthique 360, JEI INSAT × OIF" width="100%"/>
+**Plateforme d'aide à la présélection des candidats pour les castings.**
 
-<br/>
+## Présentation
 
-# 🎬 Cast IA
+Cast IA est une plateforme destinée aux producteurs et aux directeurs de casting. Son objectif est de faciliter le tri d'un grand nombre de candidatures et l'identification des profils les plus adaptés à chaque rôle.
 
-### La présélection des talents, avec l’humain au cœur du casting.
+Le fonctionnement cible est le suivant :
 
-**Prototype pour le Hackathon IA Éthique 360**  
-**JEI INSAT × OIF · Mandat JEI 2026/2027**
+1. Le producteur ou le directeur de casting définit un projet et ses rôles.
+2. Les candidats déposent leur profil et leur audition pour un rôle.
+3. Les auditions sont analysées selon des critères définis pour ce rôle.
+4. Chaque candidature reçoit une note accompagnée, à terme, d'éléments explicatifs.
+5. Pour chaque rôle, Cast IA met en avant les **15 candidats les mieux notés**.
+6. Le producteur consulte les auditions et conserve la décision finale.
 
-<p>
-  <img src="https://img.shields.io/badge/Projet-Hackathon_IA_Éthique_360-0f766e?style=for-the-badge" alt="Hackathon IA Éthique 360"/>
-  <img src="https://img.shields.io/badge/JEI_INSAT-×_OIF-1d4ed8?style=for-the-badge" alt="JEI INSAT × OIF"/>
-  <img src="https://img.shields.io/badge/Backend-Django-092e20?style=for-the-badge&logo=django&logoColor=white" alt="Django"/>
-  <img src="https://img.shields.io/badge/Frontend-React-149eca?style=for-the-badge&logo=react&logoColor=white" alt="React"/>
-</p>
+L'intelligence artificielle est un outil d'aide à la présélection : elle ne remplace pas le jugement du producteur et ses évaluations doivent pouvoir être contrôlées.
 
-<p>
-  <a href="#-le-projet">Le projet</a> ·
-  <a href="#-parcours-de-casting">Parcours</a> ·
-  <a href="#-aperçu-animé">Aperçu animé</a> ·
-  <a href="#-démo-vidéo">Démo vidéo</a> ·
-  <a href="#-technologies">Technologies</a> ·
-  <a href="#-installation">Installation</a>
-</p>
+## Technologies
 
-</div>
+### Backend
+- Python
+- Django 5.2
+- Django REST Framework
+- SQLite
+- Redis (configuration prévue pour les traitements asynchrones)
+- librosa (choix retenu pour l'extraction des caractéristiques audio)
 
----
+### Frontend
+- React 19
+- Vite
+- JavaScript
+- Axios
+- React Router
 
-## 🎭 Le projet
-
-**Cast IA** est une plateforme d’aide à la présélection des candidatures destinée aux producteurs et aux directeurs de casting. Elle vise à faciliter l’organisation des castings, la réception des auditions et l’identification des profils correspondant aux rôles proposés.
-
-Développé comme prototype dans le cadre du **Hackathon IA Éthique 360 (JEI INSAT × OIF — Mandat JEI 2026/2027)**, le projet explore la place d’un outil numérique d’assistance dans le processus de casting.
-
-> **L’outil assiste. Le directeur de casting décide.**  
-> La décision finale reste humaine.
-
-## 🕸️ Aperçu animé
-
-<div align="center">
-
-<img src="docs/assets/cast-ia-network.svg" alt="Animation du réseau de casting Cast IA" width="90%"/>
-
-<sub>Animation vectorielle originale — visualisation conceptuelle du parcours de casting.</sub>
-
-</div>
-
-## ✨ Objectif & parcours de casting
-
-<div align="center">
-
-| 01 · Définir | 02 · Candidater | 03 · Évaluer | 04 · Décider |
-|:---:|:---:|:---:|:---:|
-| 🎬 Définition du scénario et des rôles | 🎥 Inscription et dépôt d’audition | 📝 Évaluation et commentaire | 🧑‍⚖️ Consultation et décision du directeur |
-
-</div>
-
-Le parcours cible du projet :
-
-1. Le directeur de casting crée un scénario et décrit les rôles associés.
-2. Les candidats s’inscrivent et soumettent leurs auditions vidéo.
-3. Les auditions peuvent être évaluées manuellement par le directeur, avec une note sur 100 et un commentaire.
-4. Un classement des 15 meilleurs candidats par rôle est prévu dans le parcours.
-5. Le directeur de casting conserve la décision finale.
-
-## 🎬 Démo vidéo
-
-<div align="center">
-
-> **La vidéo de démonstration sera ajoutée ici.**
->
-> Une capture vidéo du prototype pourra être intégrée à cette section afin de présenter le parcours candidat et l’espace de casting.
-
-<!-- Pour intégrer une vidéo hébergée par GitHub : téléversez un fichier MP4 dans un commentaire ou une issue, puis remplacez ce texte par son URL user-attachments. -->
-
-</div>
-
-## ⚖️ Une démarche responsable
-
-Cast IA est conçu comme un **outil d’aide à la présélection**, et non comme un décideur autonome.
-
-- **Supervision humaine :** le directeur de casting conserve la décision finale.
-- **Évaluation contrôlable :** l’évaluation manuelle s’accompagne d’une note et d’un commentaire.
-- **Transparence sur le prototype :** les éléments de démonstration et les fonctionnalités en cours de développement sont signalés.
-
-*L’analyse automatique des auditions par IA n’est pas encore implémentée dans le prototype actuel.*
-
-## 🧩 Fonctionnalités disponibles dans le backend
-
-- Gestion des comptes candidat et directeur de casting.
-- Inscription des candidats.
-- Création et consultation des scénarios de casting.
-- Création et gestion des rôles associés aux scénarios.
-- Dépôt et consultation des auditions vidéo.
-- Évaluation manuelle des auditions par le directeur de casting, avec une note sur 100 et un commentaire.
-- Endpoint de classement Top 15 par rôle.
-- Contrôle des permissions selon le type de compte.
-
-## 🚧 État du prototype
-
-Cast IA est en développement. Les fonctionnalités backend décrites ci-dessus sont présentes sur la branche de travail. **L’évaluation automatique par IA n’est pas encore développée** : les évaluations du parcours actuel sont manuelles. L’interface frontend contient également des éléments de démonstration qui peuvent utiliser des données fictives.
-
-## 🏗️ Architecture du dépôt
+## Architecture
 
 ```text
-spider-el-3ankabout/
+cast-ia/
 ├── backend/
-│   ├── applicants/       # Inscription et profils candidats
-│   ├── casting/          # Scénarios, rôles et permissions
-│   ├── evaluations/      # Auditions, évaluations et classement
-│   ├── config/           # Configuration Django
-│   ├── requirements.txt  # Dépendances du backend
-│   ├── requirements-ai.txt
+│   ├── ai/
+│   ├── applicants/
+│   ├── casting/
+│   ├── evaluations/
+│   ├── config/
+│   ├── manage.py
 │   └── docker-compose.yml
+│
 ├── frontend/
-│   ├── src/              # Application React
+│   ├── public/
+│   ├── src/
 │   └── package.json
-├── docs/
-│   └── assets/           # Visuels et animations du README
+│
+├── .gitignore
 └── README.md
 ```
 
-## 🛠️ Technologies
+## Fonctionnalités actuellement présentes dans le backend
 
-<div align="center">
+- Authentification Django.
+- Profils avec deux types de comptes : directeur de casting et candidat.
+- Création automatique d'un profil lors de la création d'un utilisateur.
+- Modèle de données pour les scénarios de casting.
+- Consultation des scénarios par les utilisateurs authentifiés.
+- Création de scénarios réservée aux directeurs de casting.
+- Modèles de données pour les auditions vidéo et les évaluations.
+- Champ de note globale associé à une évaluation.
 
-| Domaine | Technologies |
-|---|---|
-| Backend & API | Python · Django · Django REST Framework |
-| Frontend | React · Vite · JavaScript |
-| Base de données | SQLite (configuration de développement) |
-| Traitements asynchrones | Celery · Redis (configuration du projet) |
-| Audio — choix prévu | librosa |
+## Interface actuelle et fonctionnalités à développer
 
-</div>
+L'interface React présente le concept Cast IA et un aperçu interactif de classements par rôle. Les noms et les notes affichés dans cet aperçu sont **des données fictives de démonstration** : ils ne proviennent pas encore du backend.
 
-## 🚀 Installation
+Les éléments suivants restent à implémenter pour obtenir le fonctionnement réel :
 
-### 1. Cloner le dépôt
+- Modèle de données des rôles, rattachés aux projets/castings.
+- Association de chaque audition au rôle concerné.
+- Dépôt et consultation des vidéos d'audition via l'API.
+- Définition des critères de notation par rôle.
+- Analyse automatique des auditions et génération de notes justifiables.
+- API de classement qui retourne les 15 meilleures candidatures pour chaque rôle.
+- Interface producteur connectée aux données réelles, avec consultation des auditions et validation humaine.
 
-```bash
-git clone https://github.com/ismailkrid957-dot/spider-el-3ankabout.git
-cd spider-el-3ankabout
-```
+**Important :** le classement automatique et le Top 15 réel ne sont pas encore opérationnels. L'aperçu de la page d'accueil sert uniquement à illustrer le résultat attendu.
 
-### 2. Démarrer le backend
+## Installation et lancement
+
+### 1. Backend
 
 Depuis le dossier `backend` :
+
+Créer et activer un environnement virtuel :
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
+
+Installer les dépendances :
+
+```powershell
 pip install -r requirements.txt
+```
+
+Configurer les variables d'environnement :
+
+```powershell
 Copy-Item .env.example .env
+```
+
+Générer une clé secrète Django :
+
+```powershell
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+
+Copier la clé générée dans le fichier `.env`, puis appliquer les migrations et lancer le serveur :
+
+```powershell
 python manage.py migrate
 python manage.py runserver
 ```
 
-Le backend est accessible à l’adresse : [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+Backend : http://127.0.0.1:8000/
 
-### 3. Démarrer le frontend
+### 2. Frontend
 
-Dans un second terminal, depuis le dossier `frontend` :
+Depuis le dossier `frontend` :
 
-```bash
+```powershell
 npm install
 npm run dev
 ```
 
-Le frontend est accessible à l’adresse : [http://localhost:5173/](http://localhost:5173/).
+Frontend : http://localhost:5173/
 
-### 4. Redis (facultatif pour le démarrage de base)
+### 3. Redis (facultatif pour le démarrage de base)
 
-Depuis le dossier `backend`, si Docker est installé :
+Pour lancer Redis avec Docker, depuis le dossier `backend` :
 
-```bash
+```powershell
 docker compose up -d
 ```
 
-## 🧪 Tests
+## État du projet
 
-Pour lancer les tests du backend depuis le dossier `backend` :
+Cast IA est un prototype en développement. La base Django contient les premiers modèles de profils, scénarios, auditions et évaluations. L'interface présente désormais la vision produit centrée sur la présélection et le Top 15 par rôle. Le modèle métier complet des rôles, l'analyse IA et le classement réel restent à construire.
 
-```bash
-python manage.py test
-```
+## Auteur
 
-Sur la branche de travail, la suite de tests Django a été exécutée avec succès : **8 tests passés**.
-
-## 🤝 Cadre du projet
-
-<div align="center">
-
-**Hackathon IA Éthique 360**  
-**JEI INSAT × Organisation internationale de la Francophonie (OIF)**  
-*Mandat JEI 2026/2027*
-
-</div>
-
-Ce dépôt présente le prototype académique et technique **Cast IA**. Les fonctionnalités sont documentées selon leur état réel de développement.
-
----
-
-<div align="center">
-
-### 🕷️ Cast IA · Une toile de talents, une décision humaine.
-
-<sub>Prototype du Hackathon IA Éthique 360 — JEI INSAT × OIF · 2026/2027</sub>
-
-</div>
+Projet académique et technique — Cast IA.
