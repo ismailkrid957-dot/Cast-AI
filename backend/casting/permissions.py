@@ -1,23 +1,27 @@
-
 from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
-class EstDirecteurOuLectureSeule(BasePermission):
+def est_directeur(user):
+    return (
+        user.is_authenticated
+        and hasattr(user, "profil")
+        and user.profil.role == "DIRECTEUR"
+    )
 
-    message = "Seul un directeur peut créer un scénario."
+
+class EstDirecteurOuLectureSeule(BasePermission):
+    message = "Seul un directeur peut créer ou modifier un casting."
 
     def has_permission(self, request, view):
-
-        # L'utilisateur doit être connecté
         if not request.user or not request.user.is_authenticated:
             return False
-
-        # Tout utilisateur connecté peut consulter les scénarios
         if request.method in SAFE_METHODS:
             return True
+        return est_directeur(request.user)
 
-        # Seul le directeur peut effectuer une écriture
-        return (
-            hasattr(request.user, 'profil')
-            and request.user.profil.role == 'DIRECTEUR'
-        )
+
+class EstDirecteur(BasePermission):
+    message = "Cette action est réservée aux directeurs de casting."
+
+    def has_permission(self, request, view):
+        return est_directeur(request.user)
