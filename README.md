@@ -1,108 +1,218 @@
 <div align="center">
-  <img src="docs/assets/banner.svg" alt="Cast AI — Présélection artistique multimodale, objective et explicable" width="100%" />
 
-  <p>
-    <strong>Plateforme de casting multimodal propulsée par une IA éthique, transparente et explicable.</strong><br />
-    <em>Prototype officiel — Hackathon IA Éthique 360 (JEI INSAT × OIF • Mandat 2026/2027)</em>
-  </p>
+<!-- ANIMATED HERO BANNER -->
+<img src="docs/assets/banner.svg" alt="Cast AI — Plateforme de présélection artistique" width="100%" />
 
-  <p>
-    <a href="#-architecture--pipeline-multimodal">Architecture</a> •
-    <a href="#-éthique-xai--radar-dévaluation">Éthique &amp; XAI</a> •
-    <a href="#-stack-technique">Stack</a> •
-    <a href="#-démarrage-rapide">Démarrage rapide</a> •
-    <a href="LICENSE">Licence MIT</a>
-  </p>
+<br/>
+
+<!-- ANIMATED TYPING HEADER -->
+<a href="https://github.com/ismailkrid957-dot/spider-el-3ankabout">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=38BDF8&center=true&vCenter=true&multiline=true&repeat=true&width=820&height=80&lines=CAST+AI+%E2%80%94+Pr%C3%A9s%C3%A9lection+Artistique+Assist%C3%A9e+par+IA;IA+%C3%89thique+360+%E2%80%A2+JEI+INSAT+%C3%97+OIF+(Mandat+2026%2F2027)" alt="Cast AI Typing Animation" />
+</a>
+
+<p align="center">
+  <strong>Plateforme d'aide à la présélection artistique — objective, explicable et inclusive.</strong>
+</p>
+
+<!-- BADGES -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Hackathon-IA_%C3%89thique_360-10B981?style=for-the-badge&logo=sparkles&logoColor=white" alt="Hackathon IA Éthique 360"/>
+  <img src="https://img.shields.io/badge/JEI_INSAT_%C3%97_OIF-Mandat_2026%2F2027-0284C7?style=for-the-badge&logo=globe&logoColor=white" alt="JEI INSAT x OIF"/>
+  <img src="https://img.shields.io/badge/Django-5.2-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django 5.2"/>
+  <img src="https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Vite"/>
+  <img src="https://img.shields.io/badge/Celery_%2B_Redis-Async_AI-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Celery Redis"/>
+</p>
+
+<p align="center">
+  <a href="#démonstration-interactive">Démonstration</a> •
+  <a href="#engagement-ia-éthique-360">IA Éthique 360</a> •
+  <a href="#architecture-technique">Architecture</a> •
+  <a href="#installation-rapide">Installation</a>
+</p>
+
 </div>
 
 ---
 
-## 🎯 Pourquoi Cast AI ?
+## Présentation & Proposition de valeur
 
-La présélection manuelle de centaines d'auditions vidéo expose les jurys à la fatigue décisionnelle et aux biais inconscients, tout en laissant les candidats sans retour objectif.
+Dans les industries culturelle et cinématographique, la présélection des candidatures souffre fréquemment d'un manque de transparence, de biais inconscients et d'une volumétrie élevée qui pénalise les talents émergents — en particulier au sein de l'espace francophone.
 
-**Cast AI** assiste les directeurs de casting en analysant de manière asynchrone les performances vidéo et vocales afin d'établir un **Top 15 argumenté par rôle**. L'algorithme ne remplace jamais le regard artistique : chaque score est décomposé visuellement pour éclairer la **validation finale par un jury humain**.
-
----
-
-## ⚙️ Architecture & Pipeline Multimodal
+**Cast AI** est une plateforme d'aide à la décision conçue pour les producteurs, directeurs de casting et jurys artistiques. Plutôt que de reposer sur un score global opaque, le moteur combine des indicateurs multimodaux objectifs (expressivité faciale, posture scénique, prosodie vocale, diction et cohérence avec le rôle) afin de générer un **profil d'évaluation radar explicable**, systématiquement soumis à la validation finale d'un jury humain.
 
 <div align="center">
-  <img src="docs/assets/pipeline-flow.svg" alt="Pipeline de traitement asynchrone Cast AI : Capture, File Async, Extraction IA et Décision XAI" width="100%" />
+  <img src="docs/assets/cast-ai-radar.svg" alt="Cast AI Engine — Radar Éthique 360" width="92%" />
 </div>
-
-1. **Capture & Dépôt (`frontend/` → `backend/`) :** Le candidat soumet son audition vidéo pour un rôle précis via l'interface React reliée à l'API Django REST Framework.
-2. **Traitement Asynchrone (`Redis` + `Celery`) :** Chaque vidéo est placée en file d'attente afin de découpler l'ingestion web des calculs lourds d'extraction multimodale.
-3. **Extraction Multimodale :**
-   * **Expressivité faciale (`DeepFace`) :** Cohérence émotionnelle et dynamique des expressions au fil de la scène.
-   * **Posture & Langage corporel (`MediaPipe`) :** Présence scénique, ancrage et gestuelle.
-   * **Prosodie & Diction (`Librosa`) :** Rythme, intonation, clarté vocale et variations d'énergie.
-4. **Aide à la Décision (`Top 15` & `XAI`) :** Génération d'un classement transparent par rôle accompagné d'un profil radar explicable soumis au jury.
 
 ---
 
-## 🛡️ Éthique, XAI & Radar d'Évaluation
+## Démonstration Interactive
+
+> **Parcours complet :** dépôt d'une audition vidéo, traitement asynchrone via Celery/Redis, extraction des métriques multimodales et restitution du profil radar explicable.
 
 <div align="center">
-  <img src="docs/assets/cast-ai-radar.svg" alt="Radar d'évaluation explicable à 6 axes et principes IA Éthique 360" width="100%" />
+  <img src="docs/assets/pipeline-flow.svg" alt="Pipeline Asynchrone Cast AI" width="95%" />
 </div>
 
-Conçu selon les principes du **Hackathon IA Éthique 360 (JEI INSAT × OIF)**, le moteur d'évaluation repose sur trois garanties :
+| Espace Candidat — Dépôt d'audition | Espace Jury — Profil Radar & Top 15 |
+| :---: | :---: |
+| ![Démo Candidat](docs/assets/demo-candidat.gif) | ![Démo Jury](docs/assets/demo-jury.gif) |
+| *Soumission vidéo et suivi du traitement en temps réel.* | *Exploration des scores explicables et validation humaine.* |
 
-* **Neutralisation des biais démographiques :** Les métriques portent exclusivement sur des signaux artistiques et techniques (prosodie, posture, expressivité, diction, adéquation au rôle), sans attributs d'âge, de genre ou d'origine.
-* **Explicabilité native (XAI) :** Aucun score « boîte noire » — le jury visualise la contribution exacte de chacun des **6 axes du radar** pour chaque profil du Top 15.
-* **Supervision humaine (*Human-in-the-Loop*) :** Cast AI filtre et structure la présélection ; le jury conserve le contrôle total sur les ajustements et la sélection finale.
-
----
-
-## 🛠️ Stack Technique
-
-| Couche | Technologies | Rôle |
-| :--- | :--- | :--- |
-| **Backend & API** | Python, Django 5.2, Django REST Framework | Gestion des rôles, auditions, authentification et endpoints REST |
-| **Asynchrone** | Celery, Redis | Exécution en arrière-plan des pipelines vidéo et audio |
-| **IA Multimodale** | MediaPipe, DeepFace, Librosa | Extraction des repères posturaux, émotionnels et acoustiques |
-| **Frontend** | React 19, Vite | Espace candidat et tableau de bord jury (Top 15 & graphiques XAI) |
-| **Base de données** | SQLite | Persistance légère pour le prototypage rapide |
+> *Astuce GitHub : pour remplacer les emplacements `.gif` ci-dessus par vos captures d'écran animées, ouvrez `README.md` en mode édition sur GitHub.com et glissez-déposez vos fichiers `.gif` ou `.mp4` directement dans l'éditeur.*
 
 ---
 
-## 📁 Structure du dépôt
+## Engagement IA Éthique 360
+
+Conçu dans le cadre du **Hackathon IA Éthique 360** co-organisé par la **Junior Entreprise INSAT (JEI)** et l'**Organisation Internationale de la Francophonie (OIF)** (*Mandat JEI 2026/2027*), **Cast AI** repose sur quatre principes fondamentaux :
+
+| Pilier Éthique | Implémentation dans Cast AI |
+| :--- | :--- |
+| **Explicabilité (XAI)** | Aucun score global opaque : chaque évaluation est décomposée par critère artistique (prosodie, expressivité, posture, diction, cohérence) dans `evaluations`. |
+| **Neutralisation des biais** | Analyse centrée exclusivement sur la performance artistique (repères géométriques et acoustiques) sans profilage morphologique ou identitaire. |
+| **Supervision humaine (*Human-in-the-Loop*)** | L'IA assiste le tri initial et met en lumière des profils atypiques ; **la décision finale de casting reste 100 % humaine**. |
+| **Inclusivité francophone** | Calibration acoustique ouverte à la diversité des accents et expressions culturelles de l'espace francophone (OIF). |
+
+---
+
+## Architecture Technique
+
+La plateforme adopte une architecture découplée pensée pour absorber les traitements vidéo et audio lourds de manière asynchrone sans dégrader la réactivité de l'interface :
+
+```mermaid
+flowchart LR
+    subgraph Frontend["Frontend (React + Vite)"]
+        UI["Interface Candidat & Jury"]
+    end
+
+    subgraph Backend["Backend API (Django 5.2 + DRF)"]
+        APP["applicants"]
+        CAST["casting"]
+        EVAL["evaluations"]
+    end
+
+    subgraph Async["Pipeline Asynchrone"]
+        REDIS[("Redis Broker")]
+        CELERY["Celery Workers"]
+    end
+
+    subgraph AI["Moteur IA Multimodal"]
+        MP["MediaPipe\nLandmarks & Posture"]
+        DF["DeepFace\nÉmotions & Expressivité"]
+        LIB["Librosa\nProsodie & Rythme Vocal"]
+    end
+
+    UI <-->|REST API JSON| Backend
+    CAST -->|Déclenche analyse| REDIS
+    REDIS --> CELERY
+    CELERY --> MP
+    CELERY --> DF
+    CELERY --> LIB
+    MP -->|Métriques explicables| EVAL
+    DF -->|Métriques explicables| EVAL
+    LIB -->|Métriques explicables| EVAL
+    EVAL -->|Profil Radar XAI| UI
+```
+
+### Structure du dépôt
 
 ```text
 spider-el-3ankabout/
-├── backend/          # API Django 5.2, modèles, tâches Celery et analyseurs IA
-├── frontend/         # Application React 19 + Vite (interfaces Candidat & Jury)
+├── backend/
+│   ├── ai/                 # Extraction multimodale (MediaPipe, DeepFace, Librosa)
+│   ├── applicants/         # Profils candidats et dépôt des auditions
+│   ├── casting/            # Projets, scénarios et rôles de casting
+│   ├── evaluations/        # Scores décomposés et critères explicables (XAI)
+│   ├── config/             # Configuration Django, Celery et routage API
+│   ├── manage.py
+│   └── docker-compose.yml  # Broker Redis pour les tâches asynchrones
+├── frontend/
+│   ├── public/
+│   ├── src/                # Composants React, visualisation Radar et client Axios
+│   └── package.json
 ├── docs/
-│   └── assets/       # Bannières et schémas SVG locaux (banner, pipeline-flow, cast-ai-radar)
-├── LICENSE           # Licence MIT
+│   └── assets/             # Bannière SVG, radar animé, pipeline et GIFs de démo
+├── .gitignore
 └── README.md
+```
 
-🚀 Démarrage rapide
+---
+
+## Installation Rapide
+
+### Prérequis
+
+* **Python** 3.11+
+* **Node.js** 18+ et **npm**
+* **Docker** *(pour l'exécution de Redis)*
+
+### 1. Cloner le dépôt
+
+```bash
 git clone [https://github.com/ismailkrid957-dot/spider-el-3ankabout.git](https://github.com/ismailkrid957-dot/spider-el-3ankabout.git)
 cd spider-el-3ankabout
+```
 
-Lancer le Backend & le Worker Celery:
+### 2. Démarrer le Backend & le Worker IA (`backend/`)
+
+```bash
 cd backend
-python -m venv .venv
-source .venv/bin/activate        # Sur Windows : .venv\Scripts\activate
+```
+
+**Créer et activer l'environnement virtuel :**
+
+* **Windows (PowerShell) :**
+  ```powershell
+  python -m venv .venv
+  .\.venv\Scripts\Activate.ps1
+  ```
+* **Linux / macOS :**
+  ```bash
+  python3 -m venv .venv
+  source .venv/bin/activate
+  ```
+
+**Installer les dépendances et configurer les variables d'environnement :**
+
+```bash
 pip install -r requirements.txt
+cp .env.example .env
+```
+*(Sous Windows PowerShell, utilisez `Copy-Item .env.example .env`.)*
+
+**Générer une clé secrète Django et l'ajouter dans `.env` :**
+
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+
+**Démarrer Redis, appliquer les migrations et lancer le serveur :**
+
+```bash
+docker compose up -d
 python manage.py migrate
 python manage.py runserver
+```
 
+*(Optionnel — dans un second terminal depuis `backend/` avec `.venv` activé, démarrez le worker Celery : `celery -A config worker -l info`)*
 
-Démarrez le worker Celery:
-cd backend
-celery -A config worker -l info
+API Backend accessible sur **http://127.0.0.1:8000/**.
 
-Lancer le Frontend:
+### 3. Démarrer le Frontend (`frontend/`)
+
+Dans un nouveau terminal, depuis la racine du projet :
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-📄 Licence:
-### Vérification rapide pour que les 3 SVG s'affichent sans erreur
+Application Frontend accessible sur **http://localhost:5173/**.
 
-Avant de valider le commit de `README.md` sur `main` :
-1. **Assurez-vous que `banner.svg`, `cast-ai-radar.svg` et `pipeline-flow.svg` sont bien tous les trois sur `main` dans `docs/assets/`**[cite: 3].
-2. **Vérifiez l'absence de `&` isolé dans `cast-ai-radar.svg` et `pipeline-flow.svg` :** si vous avez copié d'anciennes versions contenant `Équité & Auditabilité`, `Broker & Workers` ou `Top 15 & Radar`, remplacez `&` par `&amp;` (ou `+`) — sinon le proxy d'images de GitHub bloquera leur affichage dans le README.
+---
+
+## Cadre du projet
+
+Projet développé dans le cadre du **Hackathon IA Éthique 360** — **Junior Entreprise INSAT (JEI) × Organisation Internationale de la Francophonie (OIF)** (*Mandat 2026/2027*).
