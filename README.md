@@ -222,7 +222,3 @@ Application Frontend accessible sur **http://localhost:5173/**.
 Projet développé dans le cadre du **Hackathon IA Éthique 360** — **Junior Entreprise INSAT (JEI) × Organisation Internationale de la Francophonie (OIF)** (*Mandat 2026/2027*).
 
 ---
-
-## Démonstration Interactive
-
-> **Parcours complet :** dépôt d
