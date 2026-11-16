@@ -66,14 +66,6 @@ Dans les industries culturelle et cinématographique, la présélection des cand
   />
 </div>
 
-| Espace Candidat — Dépôt d'audition | Espace Jury — Profil Radar & Top 15 |
-| :---: | :---: |
-| ![Démo Candidat](docs/assets/demo-candidat.gif) | ![Démo Jury](docs/assets/demo-jury.gif) |
-| *Soumission vidéo et suivi du traitement en temps réel.* | *Exploration des scores explicables et validation humaine.* |
-
-> *Astuce GitHub : pour remplacer les emplacements `.gif` ci-dessus par vos captures d'écran animées, ouvrez `README.md` en mode édition sur GitHub.com et glissez-déposez vos fichiers `.gif` ou `.mp4` directement dans l'éditeur.*
-
----
 
 ## Engagement IA Éthique 360
 
